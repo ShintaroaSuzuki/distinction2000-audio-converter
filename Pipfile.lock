@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8c166010e32e1151038855251f718bb6544aed03570923e777a930a6b7cbf792"
+            "sha256": "8a1d9adff9589375ed776f4c8229d0f15780080feed56e9e7cc2e0d417bc7514"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.9"
+            "python_version": "3.11"
         },
         "sources": [
             {
@@ -16,6 +16,14 @@
         ]
     },
     "default": {
+        "mutagen": {
+            "hashes": [
+                "sha256:6e5f8ba84836b99fe60be5fb27f84be4ad919bbb6b49caa6ae81e70584b55e58",
+                "sha256:8af0728aa2d5c3ee5a727e28d0627966641fddfe804c23eabb5926a4d770aed5"
+            ],
+            "index": "pypi",
+            "version": "==1.46.0"
+        },
         "pydub": {
             "hashes": [
                 "sha256:65617e33033874b59d87db603aa1ed450633288aefead953b30bded59cb599a6",

@@ -21,5 +21,5 @@ $ pipenv sync --dev
 ## 使い方
 
 ```
-$ pipenv run convert ~/Music/audio ~/Music/distinction2000_natural
+$ pipenv run convert ~/Music/audio ~/Music/Distinction_2000_natural
 ```

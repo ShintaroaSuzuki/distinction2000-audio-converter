@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Literal
 
 import pydub
+from mutagen.easyid3 import EasyID3
 
 args = sys.argv
 
@@ -38,6 +39,11 @@ def handle_file(
             output_file,
             format="mp3",
         )
+        tags = EasyID3(output_file)
+        tags["title"] = output_file.stem
+        tags["album"] = output_dir.stem.replace("_", " ")
+        tags["artist"] = "ATSU"
+        tags.save()
         del d[k]
 
 

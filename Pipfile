@@ -9,6 +9,7 @@ convert = "python main.py"
 
 [packages]
 pydub = "*"
+mutagen = "*"
 
 [dev-packages]
 black = "*"
