@@ -1,10 +1,9 @@
 import sys
-import shutil
-from pathlib import Path
-import pydub
 from collections import defaultdict
+from pathlib import Path
 from typing import Literal
 
+import pydub
 
 args = sys.argv
 

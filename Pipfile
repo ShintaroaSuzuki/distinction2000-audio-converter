@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [scripts]
-format = "autoflake --in-place --remove-all-unused-imports --remove-unused-variables --recursive . && isort . && black ."
+format = "bash -c 'autoflake --in-place --remove-all-unused-imports --remove-unused-variables --recursive . && isort . && black .'"
 convert = "python main.py"
 
 [packages]
