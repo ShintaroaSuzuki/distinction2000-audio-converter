@@ -28,11 +28,14 @@ def handle_file(
     k = file.stem[:5] + type
     d[k].append(file)
     if len(d[k]) == max_len:
+        output_file = output_dir.joinpath(
+            f"{file.stem[:-1]}.mp3" if max_len != 1 else f"{file.stem}.mp3"
+        )
         combined = pydub.AudioSegment.empty()
         for f in sorted(d[k]):
             combined += pydub.AudioSegment.from_file(f, "mp3")
         combined.export(
-            output_dir.joinpath(f"{file.stem[:-1]}.mp3"),
+            output_file,
             format="mp3",
         )
         del d[k]
