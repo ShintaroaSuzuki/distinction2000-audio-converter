@@ -1,0 +1,4 @@
+[submodule "lyrics"]
+	path = lyrics
+	url = git@github-private:shintaroasuzuki/distinction2000-lyrics.git
+    branch = main

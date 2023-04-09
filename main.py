@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Literal
 
 import pydub
-from mutagen.easyid3 import EasyID3
+from mutagen.id3 import ID3, TALB, TIT2, TPE1, USLT
 
 args = sys.argv
 
@@ -39,10 +39,19 @@ def handle_file(
             output_file,
             format="mp3",
         )
-        tags = EasyID3(output_file)
-        tags["title"] = output_file.stem
-        tags["album"] = output_dir.stem.replace("_", " ")
-        tags["artist"] = "ATSU"
+        tags = ID3(output_file)
+        tags["TIT2"] = TIT2(encoding=3, text=output_file.stem)  # track title
+        tags["TALB"] = TALB(
+            encoding=3, text=output_dir.stem.replace("_", " ")
+        )  # album title
+        tags["TPE1"] = TPE1(encoding=3, text="ATSU")  # artist
+        if Path(f"./lyrics/{k[:5]}/{type}.txt").exists():
+            tags["USLT::'eng'"] = USLT(
+                encoding=3,
+                lang="eng",
+                desc="desc",
+                text=Path(f"./lyrics/{k[:5]}/{type}.txt").read_text(),
+            )  # lyrics
         tags.save()
         del d[k]
 
