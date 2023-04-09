@@ -21,5 +21,6 @@ $ pipenv sync --dev
 ## 使い方
 
 ```
+$ git submodule update --remote # optional
 $ pipenv run convert ~/Music/audio ~/Music/Distinction_2000_natural
 ```
